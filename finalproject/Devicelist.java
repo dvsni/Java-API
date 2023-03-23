@@ -59,7 +59,7 @@ public class Devicelist {
         String enterOperativeMemory = iScanner.nextLine();
         System.out.println("Укажите какую операционную систему вы предполагаете использовать: Linux, macOS, Windows");
         String enterOperatingSystem = iScanner.nextLine();
-        System.out.println("Укажите желательный цвет ноутбука: Black, Gray, Gold");
+        System.out.println("Укажите желательный цвет ноутбука: Black, Grey, Gold");
         String enterColor = iScanner.nextLine();
 
         List<Devicelist> listLaptop = new ArrayList<>();
@@ -133,7 +133,7 @@ public class Devicelist {
             }
         
             if(5 == Character.getNumericValue(userRequest.charAt(i))) {
-                System.out.println("Укажите цвет, у нас в наличии : Black, Gray, Gold");
+                System.out.println("Укажите цвет, у нас в наличии : Black, Grey, Gold");
                 String enterColor = iScanner.nextLine();
                 for (Devicelist tempLaptop : devicelist) {
                     if ((enterColor.equals(tempLaptop.color)) == false) {
