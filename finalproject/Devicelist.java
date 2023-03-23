@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
-public class Laptop {
-    private List<Brand> brands;
+public class Devicelist {
+    private List<Devicebrand> brands;
     private static Scanner iScanner = null;
 
     private String model;
@@ -19,10 +19,10 @@ public class Laptop {
     private String operatingSystem;
     private String color;
 
-    public Laptop() {
+    public Devicelist() {
     }
 
-    public Laptop(String model, String diagonal, String screenResolution, String processor, int SSD,
+    public Devicelist(String model, String diagonal, String screenResolution, String processor, int SSD,
             String operativeMemory, String operatingSystem, String color) {
         this.brands = new ArrayList<>();
         this.model = model;
@@ -44,11 +44,11 @@ public class Laptop {
     public String getOperatingSystem() {return operatingSystem;}
     public String getColor() {return color;}
     
-    public void addBrand(Brand brand) {
+    public void addBrand(Devicebrand brand) {
         brands.add(brand);
     }
 
-    public List<Laptop> filter(Set<Laptop> laptop) {
+    public List<Devicelist> filter(Set<Devicelist> devicelist) {
         iScanner = new Scanner(System.in);
         System.out.println("Доброго времени суток, укажите пожалуйста параметры для поиска подходящего ноутбука." +
                 "\nУкажите производителя процессора, в наличии: Intel, AMD, Apple");
@@ -63,8 +63,8 @@ public class Laptop {
         System.out.println("Укажите желательный цвет ноутбука: Black, Gray, Gold");
         String enterColor = iScanner.nextLine();
 
-        List<Laptop> listLaptop = new ArrayList<>();
-        for (Laptop tempLaptop : laptop) {
+        List<Devicelist> listLaptop = new ArrayList<>();
+        for (Devicelist tempLaptop : devicelist) {
             if (enterProcessor.equals(tempLaptop.processor)) {
                 if (intParseEnterSSD == tempLaptop.SSD) {
                     if (enterOperativeMemory.equals(tempLaptop.operativeMemory)) {
@@ -80,8 +80,8 @@ public class Laptop {
         return listLaptop;
     }
 
-    public Set<Laptop> newFilter(Set<Laptop> laptop) {
-        Set<Laptop> listLaptop = new HashSet<>(laptop);
+    public Set<Devicelist> newFilter(Set<Devicelist> devicelist) {
+        Set<Devicelist> listLaptop = new HashSet<>(devicelist);
         System.out.println("Доброго времени суток, укажите номера желательных характеристик для подбора вам ноутбука." +
         "\n1. Производитель процессора\n2. Объём SSD накопителя" +
         "\n3. Объём опреативной памяти\n4. Операционная система\n5. Цвет");
@@ -91,7 +91,7 @@ public class Laptop {
             if(1 == Character.getNumericValue(userRequest.charAt(i))) {
                 System.out.println("Укажите производителя процессора, у нас в наличии: Intel, AMD, Apple");
                 String enterProcessor = iScanner.nextLine();
-                for (Laptop tempLaptop : laptop) {
+                for (Devicelist tempLaptop : devicelist) {
                     if ((enterProcessor.equals(tempLaptop.processor)) == false) { 
                         listLaptop.remove(tempLaptop);
                     }
@@ -103,7 +103,7 @@ public class Laptop {
                 System.out.println("Укажите какой объём SSD накопителя вам необходим: 512, 1024, 2000");
                 String enterSSD = iScanner.nextLine();
                 int intParseEnterSSD = Integer.parseInt(enterSSD);
-                for (Laptop tempLaptop : laptop) {
+                for (Devicelist tempLaptop : devicelist) {
                     if (intParseEnterSSD != tempLaptop.SSD){ 
                         listLaptop.remove(tempLaptop);
                     }
@@ -114,7 +114,7 @@ public class Laptop {
             if(3 == Character.getNumericValue(userRequest.charAt(i))) {
                 System.out.println("Укажите какой объём оперативной памяти вам необходим: 8, 16, 32, 64");
                 String enterOperativeMemory = iScanner.nextLine();
-                for (Laptop tempLaptop : laptop) {
+                for (Devicelist tempLaptop : devicelist) {
                     if ((enterOperativeMemory.equals(tempLaptop.operativeMemory)) == false) {
                         listLaptop.remove(tempLaptop);
                     }
@@ -125,7 +125,7 @@ public class Laptop {
             if(4 == Character.getNumericValue(userRequest.charAt(i))) {
                 System.out.println("Укажите какую операционную систему вы предполагаете использовать: Linux, macOS, Windows");
                 String enterOperatingSystem = iScanner.nextLine();
-                for (Laptop tempLaptop : laptop) {
+                for (Devicelist tempLaptop : devicelist) {
                     if ((enterOperatingSystem.equals(tempLaptop.operatingSystem) == false)) {
                         listLaptop.remove(tempLaptop);
                     }
@@ -136,7 +136,7 @@ public class Laptop {
             if(5 == Character.getNumericValue(userRequest.charAt(i))) {
                 System.out.println("Укажите цвет, у нас в наличии : Black, Gray, Gold");
                 String enterColor = iScanner.nextLine();
-                for (Laptop tempLaptop : laptop) {
+                for (Devicelist tempLaptop : devicelist) {
                     if ((enterColor.equals(tempLaptop.color)) == false) {
                         listLaptop.remove(tempLaptop);
                     }
