@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Devicebrand brandApple = new Devicebrand("Apple", "USA");
         Devicelist Apple_MacBook_Pro = new Devicelist("Apple_MacBook_Pro", "16.2", "3456x2234", 
-        "Apple", 1024, "16", "macOS", "Gray");
+        "Apple", 1024, "16", "macOS", "Grey");
         Apple_MacBook_Pro.addBrand(brandApple);
         Devicelist Apple_MacBook_Air = new Devicelist("Apple_MacBook_Air", "13.6", "2560x1664", 
         "Apple", 256, "8", "macOS", "Gold");
@@ -31,7 +31,7 @@ public class Main {
         "Intel", 512, "16", "Windows", "Black");
         Lenovo_ThinkPad_T16.addBrand(brandLenovo);
         Devicelist Lenovo_Legion_5_Pro = new Devicelist("Lenovo_Legion_5_Pro", "16", "2560x1600", 
-        "AMD", 512, "16", "Linux", "Gray");
+        "AMD", 512, "16", "Linux", "Grey");
         Lenovo_Legion_5_Pro.addBrand(brandLenovo);
         Devicebrand brandAcer = new Devicebrand("Acer", "Taiwan");
         Devicelist Acer_Nitro_5 = new Devicelist("Acer_Nitro_5", "17.3", "1920x1080", 
