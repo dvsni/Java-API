@@ -51,16 +51,16 @@ public class Laptop {
     public List<Laptop> filter(Set<Laptop> laptop) {
         iScanner = new Scanner(System.in);
         System.out.println("Доброго времени суток, укажите пожалуйста параметры для поиска подходящего ноутбука." +
-                "\nУкажите производителя процессора\nВ наличии: Intel, AMD, Apple");
+                "\nУкажите производителя процессора, в наличии: Intel, AMD, Apple");
         String enterProcessor = iScanner.nextLine();
-        System.out.println("Укажите какой объём SSD накопителя вам необходим в Gb\nВ наличии у нас: 512, 1024, 2000");
+        System.out.println("Укажите какой объём SSD накопителя вам необходим, в наличии у нас: 512, 1024, 2000");
         String enterSSD = iScanner.nextLine();
         int intParseEnterSSD = Integer.parseInt(enterSSD);
-        System.out.println("Укажите какой объём оперативной памяти вам необходим в Gb\nВ наличии у нас: 8, 16, 32, 64");
+        System.out.println("Укажите какой объём оперативной памяти вам необходим, в наличии у нас: 8, 16, 32, 64");
         String enterOperativeMemory = iScanner.nextLine();
-        System.out.println("Укажите какую операционную систему\nвы предполагаете использовать: Linux, macOS, Windows");
+        System.out.println("Укажите какую операционную систему вы предполагаете использовать: Linux, macOS, Windows");
         String enterOperatingSystem = iScanner.nextLine();
-        System.out.println("Укажите желательный цвет\nноутбука: Black, Gray, Gold");
+        System.out.println("Укажите желательный цвет ноутбука: Black, Gray, Gold");
         String enterColor = iScanner.nextLine();
 
         List<Laptop> listLaptop = new ArrayList<>();
@@ -89,7 +89,7 @@ public class Laptop {
             
         for (int i = 0; i < userRequest.length(); i++) {
             if(1 == Character.getNumericValue(userRequest.charAt(i))) {
-                System.out.println("Укажите производителя процессора\nВ наличии: Intel, AMD, Apple");
+                System.out.println("Укажите производителя процессора, у нас в наличии: Intel, AMD, Apple");
                 String enterProcessor = iScanner.nextLine();
                 for (Laptop tempLaptop : laptop) {
                     if ((enterProcessor.equals(tempLaptop.processor)) == false) { 
@@ -100,7 +100,7 @@ public class Laptop {
             }
 
             if(2 == Character.getNumericValue(userRequest.charAt(i))) {
-                System.out.println("Укажите какой объём SSD накопителя в Gb\nвам необходим: 512, 1024, 2000");
+                System.out.println("Укажите какой объём SSD накопителя вам необходим: 512, 1024, 2000");
                 String enterSSD = iScanner.nextLine();
                 int intParseEnterSSD = Integer.parseInt(enterSSD);
                 for (Laptop tempLaptop : laptop) {
@@ -112,7 +112,7 @@ public class Laptop {
             }
             
             if(3 == Character.getNumericValue(userRequest.charAt(i))) {
-                System.out.println("Укажите какой объём оперативной памяти в Gb\nвам необходим: 8, 16, 32, 64");
+                System.out.println("Укажите какой объём оперативной памяти вам необходим: 8, 16, 32, 64");
                 String enterOperativeMemory = iScanner.nextLine();
                 for (Laptop tempLaptop : laptop) {
                     if ((enterOperativeMemory.equals(tempLaptop.operativeMemory)) == false) {
@@ -123,7 +123,7 @@ public class Laptop {
             }   
 
             if(4 == Character.getNumericValue(userRequest.charAt(i))) {
-                System.out.println("Укажите какую операционную систему\nвы хотите использовать: Linux, macOS, Windows");
+                System.out.println("Укажите какую операционную систему вы предполагаете использовать: Linux, macOS, Windows");
                 String enterOperatingSystem = iScanner.nextLine();
                 for (Laptop tempLaptop : laptop) {
                     if ((enterOperatingSystem.equals(tempLaptop.operatingSystem) == false)) {
@@ -134,7 +134,7 @@ public class Laptop {
             }
         
             if(5 == Character.getNumericValue(userRequest.charAt(i))) {
-                System.out.println("Укажите цвет\nВналичии : Black, Gray, Gold");
+                System.out.println("Укажите цвет, у нас в наличии : Black, Gray, Gold");
                 String enterColor = iScanner.nextLine();
                 for (Laptop tempLaptop : laptop) {
                     if ((enterColor.equals(tempLaptop.color)) == false) {
