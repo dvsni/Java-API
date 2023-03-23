@@ -1,8 +1,8 @@
-public class Notebrand {
+public class Brand {
     private String brand;
     private String country;
 
-    public Notebrand(String brand, String country){
+    public Brand(String brand, String country){
         this.brand = brand;
         this.country = country;
         }
