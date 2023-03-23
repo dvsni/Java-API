@@ -12,6 +12,6 @@ public class Notebrand {
 
     @Override
     public String toString() {
-        return brand + ", Страна производства: " + country;
+        return brand + ", Страна производителя ноутбука: " + country;
     }
 }
