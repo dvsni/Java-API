@@ -9,7 +9,6 @@ import java.util.Set;
 public class Devicelist {
     private List<Devicebrand> brands;
     private static Scanner iScanner = null;
-
     private String model;
     private String diagonal;
     private String screenResolution;
